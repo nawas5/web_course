@@ -7,9 +7,8 @@ import dash_html_components as html
 from dash.dependencies import Input, Output, State
 
 from fig_generator import fig_from_json
-from initial_figures import (
-    initial_figure_simulator
-)
+from initial_figures import initial_figure_simulator
+
 
 # Create list of tracking json files available to select from via a pulldown menu
 
@@ -58,7 +57,7 @@ app.layout = dbc.Container(
         html.Header([html.H1("Match Analysis Tool")]),
         html.Br(),
         dbc.Row(
-            [
+            {
                 dbc.Card(simulator_controls),
                 dbc.Col(
                     dbc.Card(
@@ -92,7 +91,7 @@ app.layout = dbc.Container(
                         ]
                     ),
                 ),
-            ],
+            },
             form=True,
             no_gutters=False,
         ),
