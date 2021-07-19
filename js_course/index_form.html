@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Form</title>
+</head>
+<body>
+    <!-- обработка на стороне сервера action method -->
+    <!-- способ для отслеживания событий с помощью HTML атрибутов, что не особо здорово -->
+    <!-- <form id="main-form" onsubmit="return checkForm(this)" method="post"> -->
+    <form id="main-form" method="post">
+        <!-- убираем onsubmit -->
+        <!-- если false не перезагружается страничка -->
+        <!-- перегружаем только когда true -->
+        <!-- внутрь вот этой функции передаем сам объект -->
+        <!-- onsubmit - когда нажимаем на кнопку и перезагрузка страницы -->
+        <label for="name">Имя:</label>
+        <input type="text" name="name" placeholder="Имя" id="name"><br><br>
+        <label for="password">Пароль:</label>
+        <input type="password" name="pass" placeholder="Пароль" id="pass"><br><br>
+        <label for="repass">Проверка пароля:</label>
+        <input type="password" name="repass" placeholder="Проверка пароля" id="repass"><br><br>
+        <span>Пол:</span>
+        <input type="radio" name="state" id="male" value="Мужской">
+        <label for="male">Мужской</label>
+        <input type="radio" name="state" id="female" value="Женский">
+        <label for="female">Женский</label><br><br>
+        <!-- <input type="button" name="submit" value="Готово"> -->
+        <!-- <span id="error" style=color:hotpink></span> -->
+        <div id="error" style=color:hotpink></div>
+        <input type="submit" name="submit" value="Готово">
+    </form>
+    
+    <script src="main_form.js"></script>
+</body>
+</html>

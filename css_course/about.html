@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!-- чтобы автоматически прописать теги HTML файла прописываем ! + Tab -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML + CSS</title>
+    <!-- подключение файлов из .css -->
+    <link rel="stylesheet" href="style.css">
+    <!-- тег style внутри тега head -->
+
+    <!-- <style>
+        b, p {
+            color: green;
+        }
+    </style> -->
+    <!-- лучше ограничить HTML от CSS -->
+</head>
+<body>
+    <!-- <p>Текст</p> -->
+    <p>Lorem ipsum dolor sit <b>amet</b>, consectetur adipisicing elit. In error placeat fugiat iusto veniam sapiente, voluptatum reprehenderit fugit dolor aperiam quis aliquid voluptas debitis eaque alias sequi, incidunt saepe? Ab.</p>
+    <!-- чтобы быстро прописывать теги - название тега + Tab -->
+    <!-- style - атрибут подходит для одного или двух стилей -->
+    <!-- не особо хороший вариант, ибо чтобы подключить больше стилей
+        нужно CSS (задний фон, масштаб и тд) -->
+
+    <!-- HTML теги -->
+    <p class="main-text">Main text for HTML5</p>
+    <p>Main <i class="main-text">text</i> text for HTML5</p>
+    <!-- идентификаторы - должен быть один на странице -->
+    <p id="text-id">Main <i class="main-text">text</i> text for HTML5</p>
+
+    <div>
+        <p>
+        Lorem ipsum dolor sit <b>amet</b> consectetur <i>adipisicing</i> elit. Non placeat distinctio dignissimos! Voluptatem ea hic itaque, quibusdam molestias, quia recusandae dignissimos fugiat autem assumenda culpa doloremque iure, nam odit aspernatur.
+        </p>
+    </div>
+    <h3 class="styling">Просто текст</h3>
+    <p>Еще <b class="styling">дополнительный</b> текст </p>
+
+    <!-- псевдоклассы -->
+    <a href="#" class="main_link">Ссылка</a>
+    <p class="main_link">Lorem ipsum dolor sit <b>amet</b>, consectetur adipisicing elit. In error placeat fugiat iusto veniam sapiente, voluptatum reprehenderit fugit dolor aperiam quis aliquid voluptas debitis eaque alias sequi, incidunt saepe? Ab.</p>
+    <input type="text" placeholder="Ввведите текст"><br>
+
+    <p class="text">Simple</p>
+    <p class="text"></p>
+
+    <div id="some_id">Some text</div>
+</body>
+</html>

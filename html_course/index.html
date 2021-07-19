@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<!-- html 5 версии -->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <!-- для ботов и тд для понимания того что есть на странице -->
+        <meta name="author" content="Натаха">
+        <!-- для поисковых сайтов, что искать на сайте -->
+        <meta name="description" content="Тестовая страница">
+        <meta name="keywords" content="тест, проверка, html">
+        <!-- метаданные - найстройки к странице: кодировка страницы и тд - и кириллица и латиница
+        для данного тега не нужно прописывать его окончание, не нужен закрывающийся тег -->
+        <!-- название, описание страницы, ключевые слова, автор страницы, не будет видно конечному пользователю
+        характеристики страницы, рассмотрение тегов, настройка страницы -->
+        <!-- название страницы - единственное показывание пользователю -->
+        <title>
+            Document
+        </title>
+        <!-- теги для подключения CSS и JS для этого тег link -->
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <!-- описание тегов и объектов, которые будут видны пользователю  -->
+        <h1>
+            Заголовок 1
+        </h1>
+        <pre>function some() {
+            return "Some"
+        }</pre>
+
+        <code>let x = 0;</code>
+        <!-- заголовки h1-h6 -->
+        <p>
+            Просто <b>текст</b>
+            Просто <strong>текст</strong>
+            Просто <em>текст</em>
+            Просто <i>текст</i>
+            Просто <strike>текст</strike>
+        </p>
+        <p>a<sup>2</sup></p>
+        <p>H<sub>2</sub>O</p>
+        a<sup>2</sup><br>
+        <abbr>HTML</abbr>
+        <abbr title="HTML">HTML</abbr>
+        <adress>
+            Seatle, USA
+        </adress>
+        <p>Просто <big>текст</big></p>
+        <p>Просто <small>текст</small></p>
+        <!-- с новой строки <b> - жирный-->
+        <h3>Биография</h3>
+        <p>Имя - <em>Джон Сноу</em>, дата рождения - <b>23 декабря 1985</b></p>
+        <pre>Все 
+            пробелы
+            сохранились здесь</pre>
+        <!-- работа со списками, пронумерованные списки -->
+        <ol>
+            <li>Купи молоко</li>
+            <li>Купи манго</li>
+            <li>Купи лекарства</li>
+            <li>Купи желание жить</li>
+        </ol>
+        <ol start="7">
+            <li>Купи молоко</li>
+            <li>Купи манго</li>
+            <li>Купи лекарства</li>
+            <li>Купи желание жить</li>
+        </ol>
+        <ol start="1" type="A">
+            <li>Купи молоко</li>
+            <li>Купи <big>манго</big></li>
+            <li>Купи лекарства</li>
+            <li>Купи желание жить</li>
+        </ol>
+        <!-- непронумерованный список -->
+        <ul>
+            <li>Ты пидор</li>
+        </ul>
+        <ul type="square">
+            <li>Ты пидор</li>
+        </ul>
+        
+        <!-- атрибуты, есть ко всем, например, title, а вот start только со списками -->
+
+        <!-- создание ссылок, существуют обязательные атрибуты для тегов, иначе тег из себя ничего не представляет -->
+        <a>перейтив Google</a><br>
+        <a href="https://google.com" target="_self" title="Нажми на меня">перейти в Google</a><br>
+        <!-- _blank - другая вкладка, _self открывать на этой страничке - значение по умолчанию -->
+        <!-- перейти на свой другой html файд -->
+        <a href="about.html">Перейти на мой файл</a><br>
+        <a href="#bottomOfPage">Вниз</a><br>
+        <!-- написать на мою почту - автоматически откроется -->
+        <a href="mailto:natasha.masalckova@yandex.ru">Написать на мою почту</a><br>
+
+        <!-- работа с изображениями - img - незакрывающийся тег - работает только с 
+        дополнительными атрибутами, например, source -->
+        <img src="https://mocah.org/uploads/posts/575848-Neon-Genesis.jpg" width="100%">
+        <!-- отступы CSS стили -->
+        <img src="https://mocah.org/uploads/posts/575848-Neon-Genesis.jpg" width="500px">
+        <img src="https://mocah.org/uploads/posts/575848-Neon-Genesis.jpg" width="500px" height="300px">
+        <img src="https://mocah.org/uploads/posts/575848-Neon-Genesis.jpg" width="500px" height="auto" title="Тык на картинку" alt="Если картинка не подгрузилась(">
+        <!-- подгрузить с проекта -->
+        <img src="eva01.jpg" width="500px" title="Тык на Еву">
+        <img src="images/eva01.jpg" title="Тут Ева из папки", width="500px">
+
+        <!-- HTML таблицы -->
+        <!-- атрибуты можно не прописывать, проще через стили CSS - КОРРЕКТНЕЕ -->
+        <table border="1" width="500px">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>TwoName</th>
+                </tr>
+            </thead>
+            <tbody align="center">
+                <tr>
+                    <td>Jean</td>
+                    <td>Patry</td>
+                </tr>
+                <tr>
+                    <td>Ngapet</td>
+                    <td>Ngapet</td>
+                </tr>
+                <tr>
+                    <td>Brizar</td>
+                    <td>Brizar</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>France</td>
+                    <td>Volley</td>
+                </tr>
+
+            </tfoot>
+        </table>
+
+        <!-- теги Div и Span - не обладают доп характеристиками, пока не добавили язык CSS -->
+        <div>Текст ведет себя точно также, как и абзацы</div>
+        <div>Не создаются дополнительные отступы</div>
+        <!-- мы можем через CSS сделать сюда блок со всякими разными стилями -->
+        <span>Это строчный тег, для описания текста</span>
+        <span>Не выделяется 100% ширины экрана</span>
+
+        <div>Просто <span>текст</span></div>
+        <div>Просто текст</div>
+        <!-- Div - блоки, span - текст -->
+
+        <!-- form теги с формами HTML -->
+        <!-- action - страничка обработки - данные из формы в ту страничку - это функционал -->
+        <form action="" method="">
+            <!-- есть методы get post dialog - серверный язык -->
+            <!-- если не указать action будет на той же странице -->
+            <!-- label - подпись в одном ряду подпись к формочкам -->
+            <label for="user_name">Введите имя</label>
+            <!-- подсвечивает окошко куда вводить данные -->
+            <input type="text" placeholder="Введите что-то" value="Что-то"
+            maxlength="5" name="user_name" id="user_name"><br><br>
+            <!-- hidden - скрытое поле disabled не активное нельзя что-то ввести
+            много атрибутов name - функциональное название - 
+            для функционального языка, id - можно вытянуть объект по id
+            нельзя два поля с одним и тем же id -->
+            <!-- форматы полей -->
+            <input type="password"><br><br>
+            <!-- логично, что всё выглядит как пароль -->
+            <input tupe="email"><br><br>
+            <!-- не во всех браузерах поддерживает подсказки -->
+            <input type="url"><br><br>
+            <input type="color"><br><br>
+            <input type="date"><br><br>
+            <input type="time"><br><br>
+            <input type="datetime"><br><br>
+            <!-- datetime - особо не поддерживается -->
+            <input type="checkbox"><br><br>
+            <input type="radio" name="state">
+            <input type="radio" name="state"><br><br>
+
+            <!-- cоздание кнопки -->
+            <input type="button"><br><br>
+            <!-- кнопка перезагрузки страницы? -->
+            <input type="submit" value="Отправить">
+            <input type="reset" value="Очистить"><br><br>
+            
+        </form>
+
+        <!-- Поля для ввода большого объема текста -->
+        <form>
+            <textarea placeholder="Введите что-то и растяните форму" 
+            maxlength="100" required>Просто текст
+            </textarea><br>
+            <!-- required - если ничего не введено не будет отправлено на сервер -->
+            <!-- остальное удобнее через свойства нежели через атрибуты -->
+            <button type="reset">Готово</button><br><br>
+            <!-- button - проще для кнопок -->
+        </form>
+        <!-- селекторы выбора -->
+        <form>
+            <select>
+                <!-- выбор с одним вариантом -->
+                <option disabled>-------</option>
+                <option>BMW</option>
+                <option>Audio</option>
+                <option selected>Mercedes</option>
+                <!-- selected - что выводится первым при перезагрузке страницы -->
+            </select><br><br>
+            <select multiple>
+                <!-- выбор с несколькими вариантом -->
+                <option disabled>-------</option>
+                <option>BMW</option>
+                <option selected>Audio</option>
+                <option selected>Mercedes</option>
+                <!-- selected - что выводится первым при перезагрузке страницы -->
+            </select>
+        </form><br><br>
+        <!-- HTML 5 новые теги -->
+        <!-- теги для описания секций на вашем сайте - шапки например -->
+        <div id="header">Шапка через div</div>
+        <header>Шапка</header>
+        <main>Основная часть сайта</main>
+        <!-- блоки - 100% ширины экрана и переносится на новую строку -->
+        <aside>Боковая часть сайта</aside>
+        <footer>Футер</footer>
+        <!-- лучше чем прописать div id header и тд -->
+
+        <progress max="100" value="45">Загружено на 45%</progress>
+        <details>
+            <!-- скрытый текст -->
+            <summary>Подробнее</summary>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatum non voluptatem quasi omnis earum. Natus dicta ipsam minima, alias consequatur commodi totam non asperiores cum voluptates dolores temporibus dolorum magni.
+            <!-- текст заглушка -->
+        </details>
+        <!-- смотреть документацию на HTML 5 теги и смореть с кем поддерживается -->
+        <!-- Оптимизация кода - некоторые теги могут не работать в современных браузерах -->
+        <!-- Прежде чем публиковать на сервер проверить в браузерах google yandex opera firefox safari exployer -->
+        <!-- даже input поля могут отличаться -->
+        
+
+        <!-- теги для подключения CSS и JS -->
+        <!-- тег скрипта в теге body в самом конце обычно - ибо он тяжелый -->
+        <script>
+            // можно сразу здесь писать код JS, либо можно подключить файл
+        </script>
+
+        <script src="main.js"></script>
+
+        <!-- переходим вниз страницы -->
+        <a name="bottomOfPage"></a><br>
+    </body>
+</html>

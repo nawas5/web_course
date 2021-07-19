@@ -1,0 +1,97 @@
+body {
+    color: blueviolet;
+}
+
+/* устанавливать ; - для корректности */
+/* селекторы для выборки элементов */
+
+.main-text {
+    color: green;
+}
+/* эта штука называется селектором */
+
+/* обращение к идентификатору */
+#text-id {
+    color: red;
+}
+
+/* подобные идентификаторы - например - к шапке сайта */
+
+/* вложенные селекторы выбора */
+div p b, div i {
+    color: green;
+}
+/* только для div внутри абзаца p где есть b */
+
+/* div, .name-class, #id, div p{
+
+} */
+
+.styling {
+	color: blue;
+	font-size: 23px;
+}
+
+.main_link {
+    color: blue;
+    text-decoration: none;
+}
+
+/* работа с псевдоклассами работа с различными состояниями : - для обращения к псевдоклассу
+:: псевдоэлемент */
+
+.main_link:hover {
+    color:red;
+    text-decoration: underline;
+    /* overline - бывает багает */
+    text-decoration-color: green ;
+    cursor: pointer;
+}
+
+.main_link:active{
+    color: blue;
+    text-decoration: line-through;
+}
+/* для тех ссылок по которым мы уже переходили */
+.main_link:visited{
+    color: grey;
+}
+
+input:focus {
+    color: red;
+
+}
+input {
+    color: blue; 
+}
+/* только для тех чьи отключены disabled */
+input:disabled{
+    color: yellow;
+}
+/* required - обязательное для заполнения - например, можно заполнить данные пометки */
+
+/* все объекты класса текст, но только пустые, все абзацы у которых классы как текст */
+p.text:not(:empty) {
+    color: orange;
+}
+
+#some_id::after {
+    content: "Текст после объекта";
+    text-decoration: line-through;
+}
+
+p.text:not(:empty)::after {
+    color: orange;
+    content: "Будем выводить сам текст";
+}
+
+#some_id::before {
+    content: "Текст до объекта";
+    text-decoration: line-through;
+}
+
+.main_link::first-line {
+    color:green;
+    text-decoration: none;
+}
+

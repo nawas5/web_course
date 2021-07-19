@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700;900&display=swap');
+
+/* body {
+    background-color: #7f9ab3;
+    color: #3c3e40;
+    background-image: url(https://wallpaperscave.ru/images/original/18/05-01/anime-naruto-47009.jpg);
+    background-repeat: no-repeat;
+} */
+
+/* body {
+    background: #7f9ab3  url(https://wallpaperscave.ru/images/original/18/05-01/anime-naruto-47009.jpg) no-repeat center top;
+    color: #3c3e40;
+    height: 100vh;
+    background-size: cover;
+    background-attachment: fixed;
+} */
+
+/* #first {
+
+    background: #7f9ab3  url(https://wallpaperscave.ru/images/original/18/05-01/anime-naruto-47009.jpg) no-repeat center top;
+    color: #3c3e40;
+    height: 500px;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#second {
+
+    height: 50px;
+
+} */
+
+.text {
+    color: #3c3e40;
+    text-align: center;
+    font-size: 20px;
+    /* в относительных единицах 2em - первоначальное 14px */
+    font-style: italic;
+    font-weight: bold;
+    font-family: "Black 900", cursive;
+    text-transform: lowercase;
+    word-spacing: 20px;
+    line-height: 40px;
+}
+
+/* для скачивания шрифтов fonts.google.com */
+
+/* блоки */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/* #blok {
+    background:blueviolet;
+    height: 200px;
+    width: 200px;
+    border: 3px solid black;
+    border-bottom: 0;
+    border-top-style: solid;
+    border-style: double;
+    border-radius: 15px 50% 15px 50%;
+    opacity: 0.7;
+    margin: 20px;
+    margin-top: 20px;
+    padding: 20px 50px;
+} */
+
+/* существуют все равно отступы по умолчанию */
+/* .bloks {
+    background:blueviolet;
+    height: 200px;
+    width: 200px;
+    border: 3px solid black;
+    border-bottom: 0;
+    border-top-style: solid;
+    border-style: double;
+    border-radius: 15px 50% 15px 50%;
+    opacity: 0.7;
+    margin: 20px;
+    margin-top: 20px;
+    padding: 20px 50px;
+
+    /* для решения проблемы с span */
+    /* display:block;
+} */ 
+
+/* .bloks {
+    background:blueviolet;
+    height: 200px;
+    width: 200px;
+    margin: 20px;
+}
+
+#first {
+
+    float: left;
+    background: #7f9ab3  url(https://wallpaperscave.ru/images/original/18/05-01/anime-naruto-47009.jpg) no-repeat center top;
+    color: #3c3e40;
+    height: 500px;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#second {
+    float: right;
+    height: 50px;
+
+} */
+body {
+    height: 200px;
+}
+#some_block {
+    background: red;
+    color: #fff;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 50%;
+    position: fixed;
+    left: 20px;
+    top: 50px;
+}
+/* absolute - относительно самого экранчика */
+
+#header, #footer {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    border-bottom: 4px solid silver;
+    background: #333;
+    color: #fff;
+    line-height: 100px;
+    /* идеально по центру, как и высота вашего объекта */
+    margin-bottom: 20px;
+    float:left;
+}
+
+#nav{
+    list-style: none;
+    display: block;
+    float: left;
+    width: 50%;
+    margin-left: 25%;
+    text-align: center;
+    margin-bottom: 50px;
+}
+#nav li {
+    display: inline;
+    background: pink;
+    border: 1px solid silver;
+    padding: 0 20px;
+    cursor: pointer;
+
+}
+
+#nav li:hover{
+    color: #fff;
+    background: #333;
+    border-radius: 5px;
+    border-color: sandybrown;
+}
+
+#nav li:not(:last-of-type){
+    margin-right: 20px;
+}
+
+#main {
+    float:left;
+    width: 50%;
+    margin-left: 10%;
+    background: #fafafa;
+    border: 1px solid pink;
+    padding: 20px 2.5%;
+    position: relative;
+    z-index: 1;
+}
+/* иерархия слоев position z-index */
+#aside {
+    float: right;
+    width: 20%;
+    padding: 20px 2.5%;
+    margin-left: 5%;
+    background: #fafafa;
+    border: 1px solid pink;
+    position: relative;
+    top: -10px;
+    left: -200px;
+    z-index: 0;
+}
+/* relative - позиционирование этого объекта относительно того где он */
+#footer {
+    margin-bottom: 0;
+    margin-top: 50px;
+    border-bottom: 0;
+    border-top: 4px solid silver;
+}
