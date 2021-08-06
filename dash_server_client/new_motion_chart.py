@@ -2,23 +2,16 @@ import os
 import pandas as pd
 import time
 
-
 import plotly.express as px
 import plotly.graph_objects as go
 import plotly.io as pio
 
-from time import perf_counter
-
-
 pd.options.mode.chained_assignment = None
 
-def tracking_simulator(file,start,stop):
+def tracking_simulator(filename,start,stop):
 
-    t1_start = perf_counter()
 
-    file_path =  file
-
-    df = pd.read_json(file_path, error_bad_lines=False)
+    df = pd.read_csv(filename)
 
     metka_name = df["name"].unique()
 
@@ -46,13 +39,12 @@ def tracking_simulator(file,start,stop):
     df["y"] = 1 - df["y"] / 6
 
     df = df[(df["time"] >= start) & (df["time"] <= stop)]
+    print(df)
 
     color = ["#eb6b6b", "#7ce04d", "#4de0e0", "#4d74e0", "#c34de0", "#e04d9e"]
 
     color_discrete_map = {str(metka_name[i]): color[i] for i in range(len(metka_name))}
 
-    fig = go.Figure()
-    # fig = px.scatter
     fig = px.scatter(
         df,
         x="x",
@@ -164,9 +156,6 @@ def tracking_simulator(file,start,stop):
     # Make sure pitch background image shape doesn't get distorted
     fig.update_yaxes(scaleanchor="x", scaleratio=1)
 
-    t1_stop = perf_counter()
-    print("Process took " + str((t1_stop - t1_start) / 60) + " minutes of time")
-
     fig.update_layout(legend=dict(yanchor="top", y=0.95, xanchor="left", x=-0.08))
     fig.update_layout(
         updatemenus=[
@@ -184,18 +173,16 @@ def tracking_simulator(file,start,stop):
 
     fig.update_layout(legend=dict(font=dict(family="Roboto", size=10, color="blue")))
 
+    print(fig["data"])
     for trace in fig["data"]:
         if trace["name"] == "Flags":
             trace["showlegend"] = False
 
-    export = input("Do you wish to export the graph to json (y/n)?:")
-    if export == "y":
-        export_file_name = input(
-            "Please enter a name for the json file to be exported (ending with .json): "
-        )
-        export_file_name = "data/" + export_file_name
-        with open(export_file_name, "w") as f:
-            pio.write_json(fig, f)
-            f.close()
+    print('f')
+    export_file_name = "data/patch_fig.json"
+    with open(export_file_name, "w") as f:
+        pio.write_json(fig, f)
+        f.close()
+    print(export_file_name)
 
-    return fig
+    return export_file_name

@@ -1,4 +1,6 @@
 import glob
+
+import chart as chart
 import dash
 import json
 import pandas as pd
@@ -12,7 +14,7 @@ from dash.dependencies import Input, Output, State
 
 from fig_generator import fig_from_json
 from initial_figures import initial_figure_simulation
-from new-motion-chart import tracking_simulator
+from new_motion_chart import tracking_simulator
 
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 SERVER = '10.3.168.135'
@@ -94,13 +96,15 @@ def second_callback(n_clicks):
     with open('data_points.json','w', encoding='utf-8') as f:
         json.dump(points,f)
 
-    filename = 'data_points.json'
+    filename = 'data/log.csv'
 
     speed_adjusted = 3 * 100
     game_speed = 600 - speed_adjusted
     start = 0
     stop = 300
-    fig = tracking_simulator(filename,start,stop)
+    name = tracking_simulator(filename,start,stop)
+    print(name)
+    fig = fig_from_json(name)
 
     fig.update_layout(margin=dict(l=10, r=20, b=10, t=10))
     fig.update_layout(newshape=dict(line_color="#009BFF"))
