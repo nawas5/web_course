@@ -1,7 +1,7 @@
 import plotly.express as px
 import os
 
-def initial_figure_simulation(image_file):
+def initial_figure_simulation():
     fig = px.scatter(x=[0, 0, 1, 1], y=[0, 1, 0, 1])
     fig.update_layout(xaxis=dict(range=[0, 1]))
     fig.update_layout(yaxis=dict(range=[0, 1]))
@@ -20,9 +20,9 @@ def initial_figure_simulation(image_file):
     fig.update_xaxes(showticklabels=False, title_text="")
     fig.update_yaxes(showticklabels=False, title_text="")
 
-    fig.update_layout(margin=dict(l=120, r=60, b=10, t=20))
+    fig.update_layout(margin=dict(l=80, r=60, b=10, t=20))
     fig.update_layout(modebar=dict(bgcolor="rgba(0, 0, 0, 0)"))
-    image_path = os.path.join(os.getcwd(), image_file)
+    image_path = os.path.join(os.getcwd(), "assets/Rooms12x6.jpg")
 
     from PIL import Image
 

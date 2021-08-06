@@ -1,5 +1,5 @@
 body {
-    font-family: 'Roboto',Arial,sans-serif;
+    font-family: 'Roboto',sans-serif;
     margin: 0;
     background-color: #f7f7f7;
 }
@@ -40,9 +40,7 @@ body {
     
 } */
 
-#tracking-file {
 
-}
 
 #submit-button {
     font-weight: 700;
@@ -72,12 +70,19 @@ body {
     max-width: 1024px;
     padding-right: 10px;
     padding-left: 10px;
-    margin-top: 32px;
+    margin-top: 32px;   
 }
 
 .card {
     margin-bottom: 24px;
     box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.18);
+}
+
+#game-simulation {
+    margin-bottom: 24px;
+    max-width: 1024px;
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.18);
+    height: 500px;
 }
 
 .menu {

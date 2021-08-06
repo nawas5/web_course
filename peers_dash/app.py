@@ -10,6 +10,7 @@ from dash.dependencies import Input, Output, State
 import pandas as pd
 import numpy as np
 
+from fig_generator import fig_from_json
 from initial_figures import initial_figure_simulation
 
 
@@ -17,7 +18,6 @@ tracking_file_list = glob.glob("data/*.json")
 tracking_files = [w.replace("data\\", "") for w in tracking_file_list]
 tracking_files = [s for s in tracking_files if "json" in s]
 
-image_file = "assets/Pitch.png"
 
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.COSMO],
                 meta_tags=[{
@@ -75,29 +75,32 @@ app.layout = html.Div(
         className="menu",
         ),
     html.Div(children=[
-        html.Div(
-            children=dcc.Graph(
-                id="game-simulation",
-                animate=True,
-                figure=initial_figure_simulation(image_file),
-                config={
-                    "modeBarButtonsToAdd": [
-                        "drawline",
-                        "drawopenpath",
-                        "drawcircle",
-                        "drawrect",
-                        "eraseshape",
-                    ],
-                    "modeBarButtonsToRemove": [
-                        "toggleSpikelines",
-                        "pan2d",
-                        "autoScale2d",
-                        "resetScale2d",
-                    ],
-                    "displayModeBar":False
-                },
-            ),
-            className="card",
+            dcc.Loading(
+                id="loading-icon7",
+                children=[
+                    dcc.Graph(
+                        id="game-simulation",
+                        animate=True,
+                        figure=initial_figure_simulation(),
+                        config={
+                            "modeBarButtonsToAdd": [
+                                "drawline",
+                                "drawopenpath",
+                                "drawcircle",
+                                "drawrect",
+                                "eraseshape",
+                            ],
+                            "modeBarButtonsToRemove": [
+                                "toggleSpikelines",
+                                "pan2d",
+                                "autoScale2d",
+                                "resetScale2d",
+                            ],
+                            "displayModeBar":False
+                        },
+                    ),
+                ],
+                type="default",
             )
         ],
         className="wrapper",
@@ -115,45 +118,44 @@ app.layout = html.Div(
 )
 
 def game_simulation_graph(n_clicks, speed, filename):
-
     speed_adjusted = speed * 100
     game_speed = 600 - speed_adjusted
     fig = fig_from_json("data/" + filename)
-    fig.update_layout(margin=dict(l=0, r=20, b=0, t=0))
-    # загрузка - для отображения
-    fig.update_layout(newshape=dict(line_color="#2ca6cf"))
-
+    fig.update_layout(margin=dict(l=10, r=20, b=10, t=10))
+    fig.update_layout(newshape=dict(line_color="#009BFF"))
     fig.layout.updatemenus[0].buttons[0].args[1]["frame"]["duration"] = game_speed
-
     fig.update_yaxes(scaleanchor="x", scaleratio=0.70)
     fig.update_layout(
-        updatamenus=[
+        updatemenus=[
             dict(
                 type="buttons",
                 showactive=False,
                 y=-0.10,
                 x=-0.08,
                 xanchor="left",
-                yanchor="buttom",
+                yanchor="bottom",
             )
         ]
     )
-
     fig.update_layout(autosize=True)
     fig.update_layout(modebar=dict(bgcolor="rgba(0, 0, 0, 0)", orientation="v"))
+    # Disable zoom. It just distorts and is not fine-tunable
     fig.layout.xaxis.fixedrange = True
     fig.layout.yaxis.fixedrange = True
-    fig.update_layout(legend=dict(font=dict(family="Roboto", size=10, color="grey")))
-
+    fig.update_layout(legend=dict(font=dict(family="Roboto", size=15, color="grey")))
+    # Sets background to be transparent
     fig.update_layout(
         template="plotly_dark",
         xaxis=dict(showgrid=False, showticklabels=False),
-        plot_bgcolor="rgba(0,0,0,0)",
-        paper_bgcolor="rgba(0,0,0,0)"
+        plot_bgcolor="rgba(0, 0, 0, 0)",
+        paper_bgcolor="rgba(0, 0, 0, 0)",
     )
+
     fig["layout"]["template"]["data"]["scatter"][0]["marker"]["line"]["color"] = "white"
     fig["layout"]["template"]["data"]["scatter"][0]["marker"]["opacity"] = 0.9
+
     return fig
+
 
 if __name__ == "__main__":
     app.run_server(debug=True, host="127.0.0.1")
